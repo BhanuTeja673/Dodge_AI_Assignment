@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from backend.graph_builder import data_manager
-from llm_agent import QuerySystem
+from backend.llm_agent import QuerySystem
 
 # Initialize
 app = FastAPI()

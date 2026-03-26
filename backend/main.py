@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-from graph_builder import data_manager
+from backend.graph_builder import data_manager
 from llm_agent import QuerySystem
 
 # Initialize

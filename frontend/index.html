@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context Graph System</title>
+  
+  <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  
+  <div class="app-container">
+    <!-- Left Pane: Info & Chat -->
+    <div class="left-pane glass-panel">
+      <div class="header">
+        <h1>Graph Explorer</h1>
+        <p class="subtitle">Ask questions about orders, deliveries, invoices & payments.</p>
+      </div>
+
+      <div class="chat-container">
+        <div id="chat-messages" class="chat-messages">
+          <div class="message system-msg">
+            <div class="msg-avatar">🤖</div>
+            <div class="msg-bubble">Hello! I can answer questions backed by the Context Graph. Just ask!</div>
+          </div>
+        </div>
+        
+        <form id="chat-form" class="chat-input-area">
+          <input type="text" id="chat-input" placeholder="E.g. Which products trace to broken deliveries?" autocomplete="off" required />
+          <button type="submit" id="send-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor"/>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Right Pane: Graph Canvas -->
+    <div class="right-pane glass-panel">
+      <div id="graph-network"></div>
+      
+      <!-- Overlays for stats/nodes info -->
+      <div class="graph-stats">
+        <span id="node-count">0</span> Nodes | <span id="edge-count">0</span> Edges
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
